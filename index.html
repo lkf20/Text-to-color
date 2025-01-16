@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Text Colorizer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    #container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    #output {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #eee;
+      font-family: monospace;
+    }
+
+    .color-blue {
+      color: deepskyblue;
+    }
+
+    .color-red {
+      color: red;
+    }
+
+    .color-green {
+      color: green;
+    }
+
+    .color-orange {
+      color: darkorange;
+    }
+
+    .color-pink {
+      color: hotpink;
+    }
+
+    .color-light-green {
+      color: YellowGreen;
+    }
+
+    .color-dark-yellow {
+      color: #ffc61a;
+    }
+
+    .color-purple {
+      color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Text Colorizer</h1>
+    <textarea id="input" placeholder="Enter your text here..."></textarea>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+
+    const colorMap = {
+      'P': 'color-blue',
+      'T': 'color-blue',
+      'V': 'color-blue',
+      'H': 'color-red',
+      'N': 'color-pink',
+      'Q': 'color-red',
+      'Y': 'color-red',
+      'C': 'color-green',
+      'J': 'color-green',
+      'S': 'color-blue',
+      'U': 'color-green',
+      'B': 'color-orange',
+      'I': 'color-orange',
+      'W': 'color-orange',
+      'E': 'color-pink',
+      'Z': 'color-pink',
+      'A': 'color-light-green',
+      'G': 'color-light-green',
+      'M': 'color-light-green',
+      'D': 'color-dark-yellow',
+      'K': 'color-dark-yellow',
+      'O': 'color-dark-yellow',
+      'X': 'color-dark-yellow',
+      'F': 'color-purple',
+      'L': 'color-purple',
+      'R': 'color-purple'
+    };
+
+    input.addEventListener('input', () => {
+      const text = input.value;
+      let coloredText = '';
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i].toUpperCase();
+        const colorClass = colorMap[char];
+        if (colorClass) {
+          coloredText += `<span class="${colorClass}">${text[i]}</span>`;
+        } else {
+          coloredText += text[i];
+        }
+      }
+      output.innerHTML = coloredText;
+    });
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  Hello world
+  <script src="script.js"></script>
+</body>
+
+</html>
